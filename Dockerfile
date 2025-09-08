@@ -12,6 +12,6 @@ RUN comfy model download --url https://huggingface.co/comfyanonymous/flux_text_e
 RUN comfy model download --url https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/resolve/main/split_files/vae/ae.safetensors --relative-path models\vae --filename ae.safetensors
 RUN comfy model download --url https://huggingface.co/Ancastal/Grace-Style-Kontext/resolve/main/Grace-Kontext_UltimateLoRA.safetensors --relative-path models\lora --filename Grace.safetensors
 
-COPY "Flux.1-Kontext -- Nunchaku.json" /comfyui/user/default/workflows/
+COPY "Flux.1-Kontext -- Nunchaku.json" /comfyui/user/default/workflows/default.json
 
-CMD [ "/start.sh" ]
+CMD [ "comfy launch" ]
